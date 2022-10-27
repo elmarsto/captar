@@ -1,0 +1,10 @@
+{
+	"id": "elmarsto-captar",
+	"name": "Captar",
+	"version": "0.0.1",
+	"minAppVersion": "0.15.0",
+	"description": "Capture photo, video, and audio. Speech-to-text. ",
+	"author": "elmarsto",
+	"authorUrl": "https://github.com/elmarsto/",
+	"isDesktopOnly": false
+}
