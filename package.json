@@ -30,7 +30,7 @@
 		"eslint-plugin-react": "^7.31.0",
 		"import-sort-cli": "^6.0.0",
 		"import-sort-style-module-alias": "^1.1.0",
-		"obsidian": "^1.0.2",
+		"obsidian": "^0.16.3",
 		"obsidian-plugin-cli": "^0.8.1",
 		"prettier": "^2.7.1",
 		"replace": "^1.2.1",

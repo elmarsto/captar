@@ -1,9 +1,8 @@
 import "./main.css";
 
 import { Plugin } from "obsidian";
-import Preact from "preact/compat";
-
-import { CaptarView, captarIcon } from "./CaptarView";
+import React from "preact/compat";
+import { CaptarView } from "./CaptarView";
 
 export default class CaptarPlugin extends Plugin {
 
@@ -21,7 +20,7 @@ export default class CaptarPlugin extends Plugin {
   mount(win: Window) {
     const el = win.document.body.createDiv();
 
-    Preact.render(<></>, el);
+    React.render(<></>, el);
   }
 
   unmount(win: Window) {}

@@ -1,4 +1,5 @@
-import Preact from "preact/compat";
+import React from "preact/compat";
+import { CaptarView } from "../CaptarView";
 
 import {} from "./types";
 
