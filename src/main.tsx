@@ -4,25 +4,31 @@ import { CaptarSettingTab } from "./CaptarSettingTab";
 import { CaptarCaptureModal } from "./CaptarCaptureModal";
 import React from "preact/compat";
 
-interface CaptarSettings {
-  example: boolean;
-  mySetting: string;
+export interface Settings {
+  picDir: string;
+  picFileNameTemplate: string;
+  manifestDir: string;
+  manifestFileNameTemplate: string;
+  linkTemplate: string;
 };
 
-const DEFAULT_SETTINGS: CaptarSettings = {
-  example: true,
-  mySetting: ""
+export const DEFAULT_SETTINGS: Settings = {
+  picDir: "pic/",
+  picFileNameTemplate: "",
+  manifestDir: "manifest/",
+  manifestFileNameTemplate: "",
+  linkTemplate: "![{pic}]({manifest})"
 };
 
 
 export default class CaptarPlugin extends Plugin {
   icon: HTMLElement;
-  settings: CaptarSettings;
+  settings: Settings;
 
   async onload() {
     this.mount(window);
 
-    this.icon = this.addRibbonIcon('dice','Captar', (e: MouseEvent) => {
+    this.icon = this.addRibbonIcon('camera','Captar', (e: MouseEvent) => {
 				 new CaptarCaptureModal(this.app).open();
     });
 		this.addCommand({

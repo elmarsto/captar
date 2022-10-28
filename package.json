@@ -22,6 +22,8 @@
 		"@types/mark.js": "^8.11.5",
 		"@types/node": "^14.14.37",
 		"@types/raf-schd": "^4.0.1",
+		"@types/ramda": "^0.28.18",
+		"@types/react-html5-camera-photo": "^1.5.1",
 		"@types/textarea-caret": "^3.0.1",
 		"@typescript-eslint/eslint-plugin": "^5.8.1",
 		"@typescript-eslint/parser": "^5.8.1",
@@ -38,8 +40,12 @@
 		"typescript": "^4.8.4"
 	},
 	"dependencies": {
+		"qrcode.react": "^3.1.0",
+		"ramda": "^0.28.0",
 		"react": "npm:@preact/compat",
-		"react-dom": "npm:@preact/compat"
+		"react-dom": "npm:@preact/compat",
+		"react-html5-camera-photo": "^1.5.10",
+		"react-jss": "^10.9.2"
 	},
 	"importSort": {
 		".js, .ts, .tsx": {

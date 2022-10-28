@@ -8,7 +8,7 @@ export class CaptarModal extends Modal {
     this.element = elt;
   }
   onOpen() {
-    const {element, contentEl} = this;
+    const {element, contentEl, modalEl} = this;
     React.render(element, contentEl);
   }
   onClose() {

@@ -16,7 +16,7 @@ export class CaptarSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
-		containerEl.createEl('h2', {text: 'Settings for Captar, the inventory capture tool.'});
+		containerEl.createEl('h2', {text: 'Settings for Captar, the QR-code capture tool for Obsidian.'});
 		//
 		// new Setting(containerEl)
 		// 	.setName('Setting #1')
