@@ -1,8 +1,6 @@
 import React from "preact/compat";
 import { Modal, App } from "obsidian";
 
-
-// minimal superclass for all modals
 export class CaptarModal extends Modal {
   element: React.JSX.Element;
   constructor(app: App, elt: React.JSX.Element) {
