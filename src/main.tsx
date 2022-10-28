@@ -1,27 +1,54 @@
 import "./main.css";
-
 import { Plugin } from "obsidian";
+import { CaptarSettingTab } from "./CaptarSettingTab";
+import { CaptarCaptureModal } from "./CaptarCaptureModal";
 import React from "preact/compat";
-import { CaptarView } from "./CaptarView";
+
+interface CaptarSettings {
+  example: boolean;
+  mySetting: string;
+};
+
+const DEFAULT_SETTINGS: CaptarSettings = {
+  example: true,
+  mySetting: ""
+};
+
 
 export default class CaptarPlugin extends Plugin {
-
-
-  unload(): void {}
-
-  onunload() {}
+  icon: HTMLElement;
+  settings: CaptarSettings;
 
   async onload() {
-
-    // Mount an empty component to start; views will be added as we go
     this.mount(window);
+
+    this.icon = this.addRibbonIcon('dice','Captar', (e: MouseEvent) => {
+				 new CaptarCaptureModal(this.app).open();
+    });
+		this.addCommand({
+			id: 'open-captar-modal',
+			name: 'Open Captar modal',
+			callback: () => {
+				 new CaptarCaptureModal(this.app).open();
+			}
+		});
+		this.addSettingTab(new CaptarSettingTab(this.app, this));
   }
+  unmount(win: Window) {}
 
-  mount(win: Window) {
+  async mount(win: Window) {
     const el = win.document.body.createDiv();
-
+    // TODO: is this boilerplate needed? Try taking it out
     React.render(<></>, el);
   }
 
-  unmount(win: Window) {}
+
+  async loadSettings() {
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+  }
+
+  async saveSettings() {
+    await this.saveData(this.settings);
+  }
+
 }
