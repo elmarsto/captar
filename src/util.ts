@@ -28,6 +28,8 @@ export const buf2blob = ({ buffer, type }: TypedBuffer): Blob => new Blob([buffe
 // TODO: redo this as a compose?
 export const uri2blob = (s: string) => buf2blob(uri2buf(s))
 
-export const mkPicPath = (app: App, settings: Settings) => {
-   // TODO
+export const mkPicPath = (app: App, { picDir, picFileNameTemplate  }: Settings): string => {
+    const fileName = `${picFileNameTemplate}`;
+    // TODO: interpolation of eg. YYYY-MM-DD in fileName. Moment.js?
+    return `${picDir}/${fileName}.png`
 }

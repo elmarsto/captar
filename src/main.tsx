@@ -29,13 +29,13 @@ export default class CaptarPlugin extends Plugin {
     this.mount(window);
 
     this.icon = this.addRibbonIcon('camera','Captar', (e: MouseEvent) => {
-				 new CaptarCaptureModal(this.app).open();
+				 new CaptarCaptureModal(this.app, this.settings).open();
     });
 		this.addCommand({
 			id: 'open-captar-modal',
 			name: 'Open Captar modal',
 			callback: () => {
-				 new CaptarCaptureModal(this.app).open();
+				 new CaptarCaptureModal(this.app, this.settings).open();
 			}
 		});
 		this.addSettingTab(new CaptarSettingTab(this.app, this));
